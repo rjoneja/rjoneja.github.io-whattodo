@@ -4,10 +4,23 @@
     <meta charset="UTF-8" />
     <title>Random Activity Generator</title>
     <style>
-      #result {
-        font-size: 32px;
+      html, body {
+        height: 100%;
+        margin: 0;
+      }
+      #title {
+        font-size: 7vh;
         text-align: center;
-        margin-top: 30px;
+        margin-top: 15%;
+        width: 30%;
+        float: left;
+      }
+      #result {
+        font-size: 4vh;
+        text-align: center;
+        margin-top: 10%;
+        width: 70%;
+        float: right;
         text-transform: uppercase;
       }
       #btn-generate {
@@ -21,23 +34,20 @@
         margin-top: 50px;
         cursor: pointer;
         transition: background-color 0.5s;
+        clear: both;
         display: block;
-        margin: 0 auto;
+        margin-left: auto;
+        margin-right: auto;
       }
       #btn-generate:hover {
         background-color: #ef6c00;
       }
-      .map-link {
-        font-size: 10px;
-        display: block;
-        margin-top: 10px;
-        text-align: center;
-      }
     </style>
   </head>
   <body>
-    <button id="btn-generate">WHAT SHALL WE DO TODAY?</button>
+    <div id="title">Random Activity Generator</div>
     <div id="result"></div>
+    <button id="btn-generate">WHAT SHALL WE DO TODAY?</button>
 
     <script>
       const activities = [
@@ -79,8 +89,14 @@
       btnGenerate.addEventListener("click", () => {
         const randomIndex = Math.floor(Math.random() * activities.length);
         const activity = activities[randomIndex];
-        result.innerHTML = `<div style="background-color:${activity.color}; color:white; padding: 20px;">${activity.name}</div><a class="map-link" href="https://www.google.com/maps/search/${activity.mapsQuery}" target="_blank">Map</a>`;
+        result.innerHTML = activity.name;
         document.body.style.backgroundColor = activity.color;
+      });
+      
+      result.addEventListener("click", () => {
+        const randomIndex = Math.floor(Math.random() * activities.length);
+        const activity = activities[randomIndex];
+        window.open(`https://www.google.com/maps/search/${activity.mapsQuery}`, '_blank');
       });
     </script>
   </body>
