@@ -2,28 +2,31 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Random Activity Generator</title>
+    <title>Avani Activity Generator</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Hype&display=swap" rel="stylesheet">
     <style>
       html, body {
         height: 100%;
         margin: 0;
       }
       #title {
-        font-size: 7vh;
-        text-align: center;
-        margin-top: 15%;
-        width: 30%;
-        float: left;
+        font-family: 'Hype', 'Futura', 'Helvetica Neue', sans-serif;
+        font-size: 3vh;
+        text-align: left;
+        margin-top: 3%;
+        margin-left: 3%;
+        line-height: 1.2;
       }
       #result {
-        font-size: 4vh;
+        font-family: 'Hype', 'Futura', 'Helvetica Neue', sans-serif;
+        font-size: 12vh;
         text-align: center;
-        margin-top: 10%;
-        width: 70%;
-        float: right;
+        margin-top: 20%;
         text-transform: uppercase;
       }
       #btn-generate {
+        font-family: 'Hype', 'Futura', 'Helvetica Neue', sans-serif;
         font-size: 24px;
         padding: 20px;
         border-radius: 10px;
@@ -31,7 +34,7 @@
         background-color: #f9a825;
         color: white;
         text-align: center;
-        margin-top: 50px;
+        margin-top: 10%;
         cursor: pointer;
         transition: background-color 0.5s;
         clear: both;
@@ -45,7 +48,11 @@
     </style>
   </head>
   <body>
-    <div id="title">Random Activity Generator</div>
+    <div id="title">
+      <div>Avani</div>
+      <div>Activity</div>
+      <div>Generator</div>
+    </div>
     <div id="result"></div>
     <button id="btn-generate">WHAT SHALL WE DO TODAY?</button>
 
@@ -101,3 +108,4 @@
     </script>
   </body>
 </html>
+``
